@@ -5,5 +5,7 @@ RUN apt-get update \
     doxygen graphviz plantuml \
  && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /data
-VOLUME ["/data"]
+ENV PLANTUML_JAR_PATH /usr/share/plantuml/plantuml.jar
+
+WORKDIR /usr/project
+VOLUME ["/usr/project"]
